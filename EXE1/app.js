@@ -17,7 +17,12 @@ app.use('/Employee', Employee);
 // todo  -------------------------------------   < database > --------------------------------
 
 app.use('/', Api);
-
+app.get('/public/stylesheets/Home.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/stylesheets/Home.css'));
+})
+app.get('/public/javascripts/Company.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/javascripts/Company.js'));
+})
 const mongoose = require('mongoose');
 
 mongoose.connect(
